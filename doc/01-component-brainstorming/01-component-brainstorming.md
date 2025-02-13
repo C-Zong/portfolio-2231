@@ -191,82 +191,85 @@ will likely refine your design to make your implementation easier to use.
 I think my mind is limited; I can't imagine all the methods they will have at once.
 So, this might be different when I actually begin to implement it.
 
-- Component Design #1: `ToDoList`
+- Component Design #1: `Library`
   - **Description**:
-    - User's interface. Read from the keyboard and do corresponding
-    - actions with the stored `TaskTracker` by calling `TaskManagement`.
+    - Stores books, allowing duplicates.
   - **Kernel Methods**:
-    - `void invalidCommand(SimpleWriter out, String validCommands)`: print the
-    - warnings of the invalid command.
-    - `void changePassword()`: change the current password.
+    - `void add(boolean isReturn, String book)`: If returning, move the borrowed book back to the library; otherwise, add a new book to the library.
+    - `void remove(boolean isLost, String book)`: If lost, delete the book; otherwise, borrow the book.
+    - `boolean contain(boolean available, String book)`: If available, check if the book is in the library; otherwise, check if it is borrowed.
+    - `void length()`: Report the number of books in the library.
   - **Secondary Methods**:
-    - `void initialInterface()`: print the initial interface to select sign up,
-    - login, or exit.
-    - `void createAccount()`: interface to create account.
-    - `void loginAccount()`: interface to login account.
-    - `void todayListForAccount()`: interface to list the tasks for today.
-    - `void accountMenu()`: interface to list the menu.
+    - `void borrow(String book)`: Borrow a book.
+    - `void lost((String book)`: Delete a book.
+    - `void addAll(Library library)`: Move all books from another library to this one.
+    - `void return(String book)`: Move the borrowed book back to the library.
+    - `void buyNew(String book)`: Add a new book to the library.
+    - `void find(boolean containsBorrowed, String book)`: Check whether the library has the book.
+    - `void availableNums(boolean containsBorrowed, String book)`: Report the number of available copies of a book.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - Yes, it will be mutable because the `TaskTracker` array, which stores
-      - accounts and tasks, can change over time.
+      - Yes, because the books in the library change over time due to borrowing, returning, and losses.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - I don't know. Maybe no.
+      - No, since we are only storing book names, using a map may not be efficient. However, if we sort books while or after adding them, we might use an internal class for comparison.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - I don't know. Maybe no.
+      - No, since the library does not have any fixed values that remain unchanged over time.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - Yes. Any method that requires user input validation can use `invalidCommand`;
-      - `createAccount` and `accountMenu` can use `changePassword`.
+      - Yes. `borrow`, `lost` -> `remove`... All secondary methods use the kernel methods.
 
-- Component Design #2: `TaskTracker`
+- Component Design #2: `BudgetTracker`
   - **Description**:
-    - Keep the user's data.
+    - Tracks the user’s budget by storing and managing records.
   - **Kernel Methods**:
-    - `Queue<String> dayTask(String date)`: return the tasks queue of the day.
+    - `void record(int index, String description, float amount)`:  Store a budget record at the specified index.
+    - `float remove(int index)`:  Delete a budget record at the specified index and return the removed amount.
+    - `void length()`: Report the number of budget records stored.
   - **Secondary Methods**:
-    - `void pastDayTask()`: print the passed not deleted tasks.
+    - `void printAll()`: Print all budget records with their indices.
+    - `void modify(int index)`: Modify a budget record at the specified index.
+    - `void summary()`: Calculate and report the total sum of all budget records.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - Yes, it will be mutable because tasks need to be added, modified, and
-      - deleted over time.
+      - Yes, because budget records will change over time as the user adds, removes, or modifies transactions.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - Yes, a map is used to store dates and their tasks.
+      - Maybe yes. Something similar to Map.Pair would be efficient for storing records that include both a description and an amount.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - I don't know. Maybe no.
+      - Maybe no.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - Yes, `pastDayTask` will use `dayTask`.
+      - Yes. `summary`, `printAll` -> all three kernel methods. `modify` -> `remove` and `record`.
 
 - Component Design #3: `TaskManagement`
   - **Description**:
-    - Utilities to modify data in `TaskTracker`.
+    - Manage a to-do list (strings) with priority. The representation can be a sequence, queue, stack, and so on in the class.
   - **Kernel Methods**:
-    - `void moveTaskToFront(Queue<String> tasks, int num)`: move the task number
-    - num to the first of the queue.
+    - `void add(String task, int index)`: Add a task at the specified index.
+    - `String remove(int index)`: Remove a task at the specified index.
+    - `void length()`: Report the length of the to-do list.
   - **Secondary Methods**:
-    - `void addTask(Queue<String> tasks, String toDo)`: add a task.
-    - `void removeTask(Queue<String> tasks, int num)`: remove a task.
-    - `void modifyTask(Queue<String> tasks, int num)`: modify a task.
+    - `void changePriority(int prev, int now)`: Move the task from index prev to index now.
+    - `void printAllWithIndex()`: Print all tasks with their indices before them.
+    - `void modify(int index)`: Modify the task at the specified index.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - No, utilities do not need to be changed by users.
+      - Yes, because tasks should be modified by the user.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - I don't know. Maybe no.
+      - It depends. If we implement it using a map, then yes.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - I don't know. Maybe no.
+      - I don't think so. It only manipulates tasks, so it may not need constants.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - Yes, `moveTaskToFront` will be used by `removeTask` and `modifyTask`.
+      - Yes, `changePriority` and `modify` can be implemented using `add` and `remove`, `printAllWithIndex` can utilize all three kernel methods.
 
 ## Post-Assignment
 

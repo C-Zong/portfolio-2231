@@ -13,3 +13,10 @@ the following form: YYYY.0M.0D.
 - Designed a `ToDoList` component
 - Designed a `TaskTracker` component
 - Designed a `TaskManagement` component
+
+## [2025.02.13]
+
+### Changed
+
+- Designed a `Library` component
+- Designed a `BudgetTracker` component
