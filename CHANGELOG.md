@@ -14,7 +14,7 @@ the following form: YYYY.0M.0D.
 - Designed a `TaskTracker` component
 - Designed a `TaskManagement` component
 
-## [2025.02.13]
+## [2025.02.13](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.02.13)
 
 ### Changed
 
