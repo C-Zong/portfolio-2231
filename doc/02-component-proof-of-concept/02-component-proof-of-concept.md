@@ -1,12 +1,10 @@
 # Portfolio Part 2: Component Proof-of-Concept
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Chenyang Zong
+- **Dot Number**: Zong.114
+- **Due Date**: 02/20 @ 1:50 PM EST
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 Previously, you brainstormed three ideas, and hopefully you got some feedback as
 well. However, it's impossible to know how reasonable your design actually is
@@ -30,8 +28,6 @@ the more work you can put in now, the better.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -53,8 +49,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -67,8 +61,6 @@ project. Specifically, students should be able to:
 3. Assemble a minimal working implementation of one of their designs
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -114,8 +106,13 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
-<!-- TODO: briefly argue your choice of design or design something
-new; then delete this comment -->
+I think there isn't a best one in my design, they all useful. But I can rank it from easiest to the hardest, and also the simplest to the most complex: TaskManagement, BudgetTracker, and Library. TaskManagement is just like manage an array of Stirngs. BudgetTracker can maybe need a inner class to save both the amount of money, and the description of the record. For Library, we can do many more things, like sort the books to find it quicker. It may be as hard as BudgetTracker, but it could be more complex than BudgetTracker.
+
+I think Library has too much methods I can implement, and TaskManagement is a little easy, so I choose BudgetTracker to implement.
+
+I don't think there is a best option in my design; they are all useful. However, I can rank them from easiest to hardest, and from simplest to most complex: TaskManagement, BudgetTracker, and Library. TaskManagement is like managing an array of Strings. The BudgetTracker might require an inner class to store both the amount of money and the description of each record. For the Library, we can do many more things, such as sorting the books to find them more quickly. It may be as challenging as the BudgetTracker, but it could be more complex.
+
+I think the Library has too many methods I could implement, and TaskManagement is a little easy, so I chose to implement the BudgetTracker.
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
