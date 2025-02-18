@@ -16,7 +16,13 @@ the following form: YYYY.0M.0D.
 
 ## [2025.02.13](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.02.13)
 
-### Changed
+### Updated
 
 - Designed a `Library` component
 - Designed a `BudgetTracker` component
+
+## [2025.02.17]()
+
+### Added
+
+- Designed a proof of concept for `BudgetTracker` component

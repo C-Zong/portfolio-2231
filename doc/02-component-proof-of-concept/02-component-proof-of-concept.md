@@ -106,10 +106,6 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
-I think there isn't a best one in my design, they all useful. But I can rank it from easiest to the hardest, and also the simplest to the most complex: TaskManagement, BudgetTracker, and Library. TaskManagement is just like manage an array of Stirngs. BudgetTracker can maybe need a inner class to save both the amount of money, and the description of the record. For Library, we can do many more things, like sort the books to find it quicker. It may be as hard as BudgetTracker, but it could be more complex than BudgetTracker.
-
-I think Library has too much methods I can implement, and TaskManagement is a little easy, so I choose BudgetTracker to implement.
-
 I don't think there is a best option in my design; they are all useful. However, I can rank them from easiest to hardest, and from simplest to most complex: TaskManagement, BudgetTracker, and Library. TaskManagement is like managing an array of Strings. The BudgetTracker might require an inner class to store both the amount of money and the description of each record. For the Library, we can do many more things, such as sorting the books to find them more quickly. It may be as challenging as the BudgetTracker, but it could be more complex.
 
 I think the Library has too many methods I could implement, and TaskManagement is a little easy, so I chose to implement the BudgetTracker.
@@ -122,8 +118,6 @@ I think the Library has too many methods I could implement, and TaskManagement i
 > VSCode to run git commands. It's entirely up to you. Regardless of your choice,
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -149,8 +143,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
