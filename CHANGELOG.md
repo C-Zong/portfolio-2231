@@ -8,7 +8,7 @@ the following form: YYYY.0M.0D.
 
 ## [2025.01.30](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.01.30)
 
-### Added
+### Added Component Brainstorm
 
 - Designed a `ToDoList` component
 - Designed a `TaskTracker` component
@@ -16,7 +16,13 @@ the following form: YYYY.0M.0D.
 
 ## [2025.02.13](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.02.13)
 
-### Changed
+### Updated Component Brainstorm
 
 - Designed a `Library` component
 - Designed a `BudgetTracker` component
+
+## [2025.02.17](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.02.17)
+
+### Added Component Proof
+
+- Designed a proof of concept for `BudgetTracker` component
