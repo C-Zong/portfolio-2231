@@ -27,7 +27,7 @@ the following form: YYYY.0M.0D.
 
 - Designed a proof of concept for `BudgetTracker` component
 
-## [2025.03.03]()
+## [2025.03.03](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.03.03)
 
 ### Added Component Interfaces
 
