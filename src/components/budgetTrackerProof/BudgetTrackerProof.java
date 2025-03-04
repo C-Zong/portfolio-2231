@@ -1,4 +1,4 @@
-package components.budgetproof;
+package components.budgetTrackerProof;
 
 import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
@@ -182,7 +182,7 @@ public class BudgetTrackerProof {
      *            the description of the record
      */
     private void addToIndex(int index, float amount, String description) {
-        assert index <= this.length() : "Violate: index < this.length()";
+        assert index < this.length() : "Violate: index < this.length()";
         assert index >= 0 : "Violate: index >= 0";
         // Recursively find the index
         if (index != 0) {
