@@ -26,3 +26,15 @@ the following form: YYYY.0M.0D.
 ### Added Component Proof
 
 - Designed a proof of concept for `BudgetTracker` component
+
+## [2025.03.03](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.03.03)
+
+### Added Component Interfaces
+
+- Designed kernel and enhanced interfaces for `BudgetTracker` component
+
+### Improvements Compared to Component Proof
+
+- Refer to components.queue.QueueKernel, and write a better header for the kernel interface.
+- Improve method headers by adding details like @updates and @ensures.
+- Do not specify that the `BudgetTracker` lies on the stack.
