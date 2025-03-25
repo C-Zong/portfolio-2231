@@ -39,7 +39,7 @@ the following form: YYYY.0M.0D.
 - Improve method headers by adding details like @updates and @ensures.
 - Not specify that the `BudgetTracker` lies on the stack.
 
-## [2025.03.25]()
+## [2025.03.25](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.03.25)
 
 ### Added Component Abstract Class
 
