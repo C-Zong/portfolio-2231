@@ -26,16 +26,59 @@ public interface BudgetTrackerKernel
      * Inner class representing a single budget record. It stores the amount of
      * money and its description.
      */
-    @SuppressWarnings("unused")
     class Record {
+        /*
+         * Private members
+         */
+
         /**
          * The amount of money.
          */
         private float amount;
+
         /**
          * The record description.
          */
         private String description;
+
+        /*
+         * Constructors
+         */
+
+        /**
+         * Constructor for a record.
+         *
+         * @param amount
+         *            the amount of money
+         * @param description
+         *            the description
+         */
+        public Record(float amount, String description) {
+            this.amount = amount;
+            this.description = description;
+        }
+
+        /*
+         * Public methods
+         */
+
+        /**
+         * Returns the amount of the record.
+         *
+         * @return the amount of the record
+         */
+        public float amount() {
+            return this.amount;
+        }
+
+        /**
+         * Returns the description of the record.
+         *
+         * @return the description of the record
+         */
+        public String description() {
+            return this.description;
+        }
     }
 
     /**

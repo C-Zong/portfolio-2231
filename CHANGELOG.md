@@ -37,4 +37,16 @@ the following form: YYYY.0M.0D.
 
 - Refer to components.queue.QueueKernel, and write a better header for the kernel interface.
 - Improve method headers by adding details like @updates and @ensures.
-- Do not specify that the `BudgetTracker` lies on the stack.
+- Not specify that the `BudgetTracker` lies on the stack.
+
+## [2025.03.25]()
+
+### Added Component Abstract Class
+
+- Designed abstract class for `BudgetTracker` component
+
+### Updated
+
+- Added a constructor and public methods to the inner class `Record`
+- Removed an unused parameter from the `printNumOfRecords` method
+- Updated the required clause of the `addToIndex` method
