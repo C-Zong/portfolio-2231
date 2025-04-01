@@ -51,7 +51,7 @@ the following form: YYYY.0M.0D.
 - Removed an unused parameter from the `printNumOfRecords` method
 - Updated the required clause of the `addToIndex` method
 
-## [2025.04.01]()
+## [2025.04.01](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.04.01)
 
 ### Updated Abstract Class and Kernel Class with Instructor's Guidance
 
