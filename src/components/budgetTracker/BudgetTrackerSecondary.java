@@ -9,48 +9,12 @@ import components.stack.Stack2;
  */
 public abstract class BudgetTrackerSecondary implements BudgetTracker {
     /*
-     * Private members
-     */
-
-    /**
-     * The name of the account.
-     */
-    private String accountName;
-
-    /*
-     * Constructors
-     */
-
-    /**
-     * Constructor for a budget tracker.
-     *
-     * @param accountName
-     *            the name of the account
-     */
-    public BudgetTrackerSecondary(String accountName) {
-        this.accountName = accountName;
-    }
-
-    /*
-     * Public methods
-     */
-
-    /**
-     * Returns the name of the account.
-     *
-     * @return the name of the account
-     */
-    public final String accountName() {
-        return this.accountName;
-    }
-
-    /*
      * Common methods (from Object)
      */
     @Override
     public final int hashCode() {
         // Return the hash code of the account name
-        return this.accountName.hashCode();
+        return this.getAccountName().hashCode();
     }
 
     @Override
@@ -60,14 +24,14 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
             return false;
         }
         // Compare the account names
-        return this.accountName
-                .equals(((BudgetTrackerSecondary) obj).accountName());
+        return this.getAccountName()
+                .equals(((BudgetTrackerSecondary) obj).getAccountName());
     }
 
     @Override
     public final String toString() {
         // Return the account name and the number of records
-        return this.accountName + " has " + this.length() + " records.";
+        return this.getAccountName() + " has " + this.length() + " records.";
     }
 
     /*
@@ -78,9 +42,9 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
         assert num <= this.length() && out
                 .isOpen() : "Violation of: num <= |this| and out.isOpen()";
         // Use a stack to store the last num records
-        Stack<Record> stack = new Stack2<>();
+        Stack<Transaction> stack = new Stack2<>();
         for (int i = 0; i < num; i++) {
-            Record record = this.remove();
+            Transaction record = this.remove();
             out.println(i + ": " + String.format("%.2f", record.amount()) + "$ "
                     + record.description());
             stack.push(record);
@@ -97,7 +61,7 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
         assert index <= this.length()
                 && index >= 0 : "Violation of: index <= |this| and index >= 0";
         // Use a stack to store the records before the index
-        Stack<Record> stack = new Stack2<>();
+        Stack<Transaction> stack = new Stack2<>();
         for (int i = 0; i < index; i++) {
             stack.push(this.remove());
         }
@@ -112,18 +76,18 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
     }
 
     @Override
-    public final Record modifyIndex(int index, float amount,
+    public final Transaction modifyIndex(int index, float amount,
             String description) {
         assert index < this.length()
                 && index >= 0 : "Violation of: index < |this| and index >= 0";
         // Use a stack to store the records before the index
-        Stack<Record> stack = new Stack2<>();
+        Stack<Transaction> stack = new Stack2<>();
         for (int i = 0; i < index; i++) {
             stack.push(this.remove());
         }
 
         // Modify the record at the index
-        Record record = this.remove();
+        Transaction record = this.remove();
         this.add(amount, description);
 
         // Add the records back
@@ -136,17 +100,17 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
     }
 
     @Override
-    public final Record removeIndex(int index) {
+    public final Transaction removeIndex(int index) {
         assert index < this.length()
                 && index >= 0 : "Violation of: index < |this| and index >= 0";
         // Use a stack to store the records before the index
-        Stack<Record> stack = new Stack2<>();
+        Stack<Transaction> stack = new Stack2<>();
         for (int i = 0; i < index; i++) {
             stack.push(this.remove());
         }
 
         // Remove the record at the index
-        Record record = this.remove();
+        Transaction record = this.remove();
 
         // Add the records back
         while (stack.length() > 0) {
@@ -169,13 +133,13 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
         }
 
         // Use a stack to store the records before the curIndex
-        Stack<Record> stack = new Stack2<>();
+        Stack<Transaction> stack = new Stack2<>();
         for (int i = 0; i < curIndex; i++) {
             stack.push(this.remove());
         }
 
         // Store the record at the curIndex
-        Record record = this.remove();
+        Transaction record = this.remove();
 
         // Find the target index
         if (curIndex < index) {

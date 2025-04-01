@@ -52,7 +52,7 @@ public interface BudgetTracker extends BudgetTrackerKernel {
      * #this = front * <(#amount, #description)> * back and |back| = index and
      * modifyIndex = (#amount, #description) </pre>
      */
-    Record modifyIndex(int index, float amount, String description);
+    Transaction modifyIndex(int index, float amount, String description);
 
     /**
      * Remove the record at the specified {@code index}.
@@ -65,7 +65,7 @@ public interface BudgetTracker extends BudgetTrackerKernel {
      * @ensures <pre> #this = front * <(record)> * back and
      * this = front * back and |back| = index </pre>
      */
-    Record removeIndex(int index);
+    Transaction removeIndex(int index);
 
     /**
      * Change the record from {@code curIndex} to {@code index}.

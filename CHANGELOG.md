@@ -45,8 +45,17 @@ the following form: YYYY.0M.0D.
 
 - Designed abstract class for `BudgetTracker` component
 
-### Updated
+### Updated Kernel Methods
 
 - Added a constructor and public methods to the inner class `Record`
 - Removed an unused parameter from the `printNumOfRecords` method
 - Updated the required clause of the `addToIndex` method
+
+## [2025.04.01]()
+
+### Updated Abstract Class and Kernel Class with Instructor's Guidance
+
+- Removed the constructor and fields from the abstract class
+- Added getter and setter for `accountName` in `BudgetKernel`
+- Renamed `Record` to `Transaction`
+- Refactored `Transaction` to a record for immutable data storage
