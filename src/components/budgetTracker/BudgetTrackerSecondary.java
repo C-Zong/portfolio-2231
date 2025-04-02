@@ -19,6 +19,10 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
 
     @Override
     public final boolean equals(Object obj) {
+        // Check if the object is null
+        if (obj == null) {
+            return false;
+        }
         // Check if the object is an instance of BudgetTrackerSecondary
         if (!(obj instanceof BudgetTrackerSecondary)) {
             return false;
