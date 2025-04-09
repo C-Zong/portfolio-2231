@@ -59,3 +59,9 @@ the following form: YYYY.0M.0D.
 - Added getter and setter for `accountName` in `BudgetKernel`
 - Renamed `Record` to `Transaction`
 - Refactored `Transaction` to a record for immutable data storage
+
+## [2025.04.08](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.04.08)
+
+### Added Component Kernel Implementation
+
+- Designed kernel implementation for `BudgetTracker` component
