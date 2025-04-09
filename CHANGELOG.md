@@ -38,3 +38,9 @@ the following form: YYYY.0M.0D.
 - Refer to components.queue.QueueKernel, and write a better header for the kernel interface.
 - Improve method headers by adding details like @updates and @ensures.
 - Do not specify that the `BudgetTracker` lies on the stack.
+
+## [2025.04.08]()
+
+### Added Component Kernel Implementation
+
+- Designed kernel implementation for `BudgetTracker` component
