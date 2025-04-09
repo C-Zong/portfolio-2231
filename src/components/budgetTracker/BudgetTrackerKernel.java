@@ -1,5 +1,6 @@
 package components.budgetTracker;
 
+import components.budgetTracker.BudgetTrackerKernel.Transaction;
 import components.standard.Standard;
 
 /**
@@ -16,7 +17,7 @@ import components.standard.Standard;
  * @iterator ~this.seen * ~this.unseen = this
  */
 public interface BudgetTrackerKernel
-        extends Standard<BudgetTracker>, Iterable<BudgetTracker> {
+        extends Standard<BudgetTracker>, Iterable<Transaction> {
     /**
      * A constant used to round floating-point values to two decimal places.
      */
@@ -85,4 +86,26 @@ public interface BudgetTrackerKernel
      * @ensures balance = [sum of all amounts in the tracker]
      */
     float balance();
+<<<<<<< Updated upstream
+=======
+
+    /**
+     * Sets the name of the account.
+     *
+     * @param name
+     *            the name of the account
+     * @update this
+     * @requires name != null
+     * @ensures this.accountName = name
+     */
+    void setAccountName(String name);
+
+    /**
+     * Returns the name of the account.
+     *
+     * @return the name of the account
+     * @ensures getAccountName = this.accountName
+     */
+    String getAccountName();
+>>>>>>> Stashed changes
 }
