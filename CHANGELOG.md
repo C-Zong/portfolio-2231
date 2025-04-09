@@ -37,7 +37,28 @@ the following form: YYYY.0M.0D.
 
 - Refer to components.queue.QueueKernel, and write a better header for the kernel interface.
 - Improve method headers by adding details like @updates and @ensures.
-- Do not specify that the `BudgetTracker` lies on the stack.
+- Not specify that the `BudgetTracker` lies on the stack.
+
+## [2025.03.25](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.03.25)
+
+### Added Component Abstract Class
+
+- Designed abstract class for `BudgetTracker` component
+
+### Updated Kernel Methods
+
+- Added a constructor and public methods to the inner class `Record`
+- Removed an unused parameter from the `printNumOfRecords` method
+- Updated the required clause of the `addToIndex` method
+
+## [2025.04.01](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.04.01)
+
+### Updated Abstract Class and Kernel Class with Instructor's Guidance
+
+- Removed the constructor and fields from the abstract class
+- Added getter and setter for `accountName` in `BudgetKernel`
+- Renamed `Record` to `Transaction`
+- Refactored `Transaction` to a record for immutable data storage
 
 ## [2025.04.08](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.04.08)
 
