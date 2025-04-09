@@ -23,19 +23,14 @@ public interface BudgetTrackerKernel
     float ROUNDING = 100.0f;
 
     /**
-     * Inner class representing a single budget record. It stores the amount of
-     * money and its description.
+     * A record representing a transaction with an amount and a description.
+     *
+     * @param amount
+     *            the amount of money of the record
+     * @param description
+     *            the description of the record
      */
-    @SuppressWarnings("unused")
-    class Record {
-        /**
-         * The amount of money.
-         */
-        private float amount;
-        /**
-         * The record description.
-         */
-        private String description;
+    record Transaction(float amount, String description) {
     }
 
     /**
@@ -54,7 +49,7 @@ public interface BudgetTrackerKernel
      * @requires |this| > 0
      * @ensures #this = this * <remove>
      */
-    Record remove();
+    Transaction remove();
 
     /**
      * Add a record to the tracker.
@@ -76,7 +71,7 @@ public interface BudgetTrackerKernel
      * @update this
      * @ensures this = #this * <record>
      */
-    void add(Record record);
+    void add(Transaction record);
 
     /**
      * Reports the current balance, rounded according to {@code ROUNDING}.
@@ -85,4 +80,22 @@ public interface BudgetTrackerKernel
      * @ensures balance = [sum of all amounts in the tracker]
      */
     float balance();
+
+    /**
+     * Sets the name of the account.
+     *
+     * @param name
+     *            the name of the account
+     * @update this
+     * @ensures this.accountName = name
+     */
+    void setAccountName(String name);
+
+    /**
+     * Returns the name of the account.
+     *
+     * @return the name of the account
+     * @ensures getAccountName = this.accountName
+     */
+    String getAccountName();
 }

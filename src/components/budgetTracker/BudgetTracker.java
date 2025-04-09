@@ -12,15 +12,13 @@ public interface BudgetTracker extends BudgetTrackerKernel {
      *
      * @param num
      *            the number of records need to be printed
-     * @param index
-     *            the index of the record
      * @param out
      *            output stream
      * @updates out
      * @requires num <= |this| and out.isOpen()
      * @ensures out = #out * printNumOfRecords
      */
-    void printNumOfRecords(int num, int index, SimpleWriter out);
+    void printNumOfRecords(int num, SimpleWriter out);
 
     /**
      * Add the record at the specified {@code index}.
@@ -32,7 +30,7 @@ public interface BudgetTracker extends BudgetTrackerKernel {
      * @param description
      *            the description of the record
      * @updates this
-     * @requires index < |this| and index >= 0
+     * @requires index <= |this| and index >= 0
      * @ensures <pre> this = front * <(amount, description)> * back and
      * #this = front * back and |back| = index </pre>
      */
@@ -54,7 +52,7 @@ public interface BudgetTracker extends BudgetTrackerKernel {
      * #this = front * <(#amount, #description)> * back and |back| = index and
      * modifyIndex = (#amount, #description) </pre>
      */
-    Record modifyIndex(int index, float amount, String description);
+    Transaction modifyIndex(int index, float amount, String description);
 
     /**
      * Remove the record at the specified {@code index}.
@@ -67,7 +65,7 @@ public interface BudgetTracker extends BudgetTrackerKernel {
      * @ensures <pre> #this = front * <(record)> * back and
      * this = front * back and |back| = index </pre>
      */
-    Record removeIndex(int index);
+    Transaction removeIndex(int index);
 
     /**
      * Change the record from {@code curIndex} to {@code index}.
