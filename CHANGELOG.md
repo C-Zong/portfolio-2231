@@ -39,7 +39,7 @@ the following form: YYYY.0M.0D.
 - Improve method headers by adding details like @updates and @ensures.
 - Do not specify that the `BudgetTracker` lies on the stack.
 
-## [2025.04.08]()
+## [2025.04.08](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.04.08)
 
 ### Added Component Kernel Implementation
 
