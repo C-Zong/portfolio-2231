@@ -28,21 +28,23 @@ public class BudgetTracker1L extends BudgetTrackerSecondary {
     private Stack<Transaction> rep;
 
     /**
-     * Creator of initial representation.
-     */
-    private void createNewRep() {
-        this.rep = new Stack2<>();
-    }
-
-    /**
      * The name of the account associated with this budget tracker.
      */
-    private String accountName = "Default Account";
+    private String accountName;
 
     /**
      * The balance of the budget tracker.
      */
-    private float balance = 0.0f;
+    private float balance;
+
+    /**
+     * Creator of initial representation.
+     */
+    private void createNewRep() {
+        this.rep = new Stack2<>();
+        this.accountName = "Default Account";
+        this.balance = 0.0f;
+    }
 
     /*
      * Constructors
@@ -63,8 +65,8 @@ public class BudgetTracker1L extends BudgetTrackerSecondary {
      */
     public BudgetTracker1L(String accountName) {
         assert accountName != null : "Violation of: accountName is not null";
-        this.accountName = accountName;
         this.createNewRep();
+        this.accountName = accountName;
     }
 
     /**
@@ -77,9 +79,9 @@ public class BudgetTracker1L extends BudgetTrackerSecondary {
      */
     public BudgetTracker1L(String accountName, float balance) {
         assert accountName != null : "Violation of: accountName is not null";
+        this.createNewRep();
         this.accountName = accountName;
         this.balance = balance;
-        this.createNewRep();
     }
 
     /*
@@ -99,8 +101,6 @@ public class BudgetTracker1L extends BudgetTrackerSecondary {
     @Override
     public final void clear() {
         this.createNewRep();
-        this.accountName = "Default Account";
-        this.balance = 0.0f;
     }
 
     @Override
@@ -114,8 +114,6 @@ public class BudgetTracker1L extends BudgetTrackerSecondary {
         this.accountName = localSource.accountName;
         this.balance = localSource.balance;
         localSource.createNewRep();
-        localSource.accountName = "Default Account";
-        localSource.balance = 0.0f;
     }
 
     /*
