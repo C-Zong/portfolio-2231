@@ -66,7 +66,7 @@ the following form: YYYY.0M.0D.
 
 - Designed kernel implementation for `BudgetTracker` component
 
-## [2025.04.15]()
+## [2025.04.15](https://github.com/C-Zong/portfolio-2231/releases/tag/v2025.04.15)
 
 ### Added Test Cases
 
