@@ -65,3 +65,14 @@ the following form: YYYY.0M.0D.
 ### Added Component Kernel Implementation
 
 - Designed kernel implementation for `BudgetTracker` component
+
+## [2025.04.15]()
+
+### Added Test Cases
+
+- Designed test suite for `BudgetTracker` component
+- Designed two different use cases for `BudgetTracker` component
+
+### Updated `BudgetTrackerSecondary`
+
+- Fixed a bug in `changeIndex` method
