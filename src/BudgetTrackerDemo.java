@@ -1,4 +1,3 @@
-package components.budgetTrackerProof;
 
 import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
@@ -9,7 +8,7 @@ import components.stack.Stack2;
  * This class serves as a proof-of-concept for the BudgetTracker. It uses a
  * stack (Stack2) to manage and store budget records.
  */
-public class BudgetTrackerProof {
+public class BudgetTrackerDemo {
 
     /*
      * A useful constant for rounding purposes.
@@ -70,7 +69,7 @@ public class BudgetTrackerProof {
     /**
      * No argument constructor.
      */
-    BudgetTrackerProof() {
+    BudgetTrackerDemo() {
         this.createNewRep();
     }
 
@@ -285,7 +284,7 @@ public class BudgetTrackerProof {
          * records
          */
         SimpleWriter out = new SimpleWriter1L();
-        BudgetTrackerProof btp = new BudgetTrackerProof();
+        BudgetTrackerDemo btp = new BudgetTrackerDemo();
         btp.addToIndex(0, btp.roundingFactor, "Initial balance 02/17");
         btp.addToIndex(0, breakfastCost, "Breakfast 02/17");
         btp.addToIndex(0, lunchCost, "Lunch 02/17");

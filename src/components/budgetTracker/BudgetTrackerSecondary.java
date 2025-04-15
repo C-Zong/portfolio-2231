@@ -147,7 +147,7 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
 
         // Find the target index
         if (curIndex < index) {
-            for (int i = 0; i < index - curIndex - 1; i++) {
+            for (int i = 0; i < index - curIndex; i++) {
                 stack.push(this.remove());
             }
         } else {
